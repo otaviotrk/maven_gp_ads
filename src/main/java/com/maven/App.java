@@ -7,13 +7,11 @@ public class App {
         try {
             Tomcat tomcat = new Tomcat();
             tomcat.setPort(8080);
-            tomcat.addWebapp("", "src/main/java/com");
+            tomcat.addWebapp("localhost", "src/main/java/com");
             tomcat.start();
             tomcat.getServer().await();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Deu ruim!");
         }
-
     }
 }
